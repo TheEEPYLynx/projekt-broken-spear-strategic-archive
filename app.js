@@ -45,7 +45,7 @@ function openArticle(id) {
 
         <h3>${section}</h3>
 
-        <p>${article.sections[section]}</p>
+        <p>${convertLinks(article.sections[section])}</p>
 
         `;
 
@@ -68,20 +68,28 @@ function openArticle(id) {
     });
 
 
+}
+
+
 function convertLinks(text) {
 
-    let words = {
+    let links = {
+
         "KCS": "kcs",
         "HMCM": "hmcm",
         "SOW": "sow"
+
     };
 
 
-    for (let word in words) {
+    for (let word in links) {
 
         text = text.replaceAll(
+
             word,
-            `<button onclick="openArticle('${words[word]}')">${word}</button>`
+
+            `<button onclick="openArticle('${links[word]}')">${word}</button>`
+
         );
 
     }
