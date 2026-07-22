@@ -32,7 +32,7 @@ function openArticle(id) {
 
     <p><b>Category:</b> ${article.category}</p>
 
-    <p>${article.overview}</p>
+    <p>${convertLinks(article.overview)}</p>
 
     <hr>
 
@@ -67,5 +67,26 @@ function openArticle(id) {
 
     });
 
+
+function convertLinks(text) {
+
+    let words = {
+        "KCS": "kcs",
+        "HMCM": "hmcm",
+        "SOW": "sow"
+    };
+
+
+    for (let word in words) {
+
+        text = text.replaceAll(
+            word,
+            `<button onclick="openArticle('${words[word]}')">${word}</button>`
+        );
+
+    }
+
+
+    return text;
 
 }
