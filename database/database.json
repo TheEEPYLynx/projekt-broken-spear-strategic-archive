@@ -1,0 +1,37 @@
+{
+  "factions": [
+    {
+      "name": "Knights Council Supreme",
+      "short": "KCS",
+      "description": "A major organization specializing in mechanized warfare and logistics."
+    },
+    {
+      "name": "United Planetary Defense Coalition",
+      "short": "UPDC",
+      "description": "A major human defense organization."
+    },
+    {
+      "name": "Oddly Weird Outfit",
+      "short": "OWO",
+      "description": "A faction known for advanced warp technology."
+    }
+  ],
+
+  "weapons": [
+    {
+      "name": "HMMR",
+      "description": "Heavy Multi-role Mass Resonance Hammer."
+    },
+    {
+      "name": "HSR-93",
+      "description": "Heavy Sniper Rifle-93."
+    }
+  ],
+
+  "technology": [
+    {
+      "name": "Heaven's Lance",
+      "description": "A massive orbital railgun system."
+    }
+  ]
+}
