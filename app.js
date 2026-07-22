@@ -8,12 +8,27 @@ fetch("database/database.json")
     database = data;
     console.log("PBS Database Loaded");
 
+})
+.catch(error => {
+
+    console.log("Database Error:", error);
+
 });
+
 
 
 function openArticle(id) {
 
     let output = document.getElementById("output");
+
+
+    if (!database) {
+
+        output.innerHTML = "<p>Database still loading. Try again.</p>";
+        return;
+
+    }
+
 
     let article = database.articles[id];
 
@@ -69,6 +84,7 @@ function openArticle(id) {
 
 
 }
+
 
 
 function convertLinks(text) {
