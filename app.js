@@ -1,91 +1,71 @@
 let database = null;
 
+
 fetch("database/database.json")
-    .then(response => response.json())
-    .then(data => {
-        database = data;
-        console.log("PBS Database Loaded");
-    });
+.then(response => response.json())
+.then(data => {
+
+    database = data;
+    console.log("PBS Database Loaded");
+
+});
 
 
-function openCategory(category) {
+function openArticle(id) {
 
     let output = document.getElementById("output");
 
-    if (!database) {
-        output.innerHTML = "<p>Database loading...</p>";
+    let article = database.articles[id];
+
+
+    if (!article) {
+
+        output.innerHTML = "<p>Article unavailable.</p>";
         return;
-    }
-
-
-    if (category === "Factions") {
-
-        output.innerHTML = "<h3>Factions</h3>";
-
-        database.factions.forEach(item => {
-
-            output.innerHTML +=
-            `
-            <p>
-            <b>${item.name}</b> (${item.short})<br>
-            ${item.description}
-            </p>
-            `;
-
-        });
 
     }
 
 
-    if (category === "Weapons") {
+    output.innerHTML = `
 
-        output.innerHTML = "<h3>Weapons</h3>";
+    <h2>${article.title}</h2>
 
-        database.weapons.forEach(item => {
+    <p><b>Category:</b> ${article.category}</p>
 
-            output.innerHTML +=
-            `
-            <p>
-            <b>${item.name}</b><br>
-            ${item.description}
-            </p>
-            `;
+    <p>${article.overview}</p>
 
-        });
+    <hr>
 
-    }
+    `;
 
 
-    if (category === "Technology") {
+    for (let section in article.sections) {
 
-        output.innerHTML = "<h3>Technology</h3>";
+        output.innerHTML += `
 
-        database.technology.forEach(item => {
+        <h3>${section}</h3>
 
-            output.innerHTML +=
-            `
-            <p>
-            <b>${item.name}</b><br>
-            ${item.description}
-            </p>
-            `;
+        <p>${article.sections[section]}</p>
 
-        });
-
-    }
-
-
-    if (category === "HMCM") {
-
-        output.innerHTML =
-        `
-        <h3>HMCM Archive</h3>
-        <p>
-        Heavy Military Combat Machine database.
-        Entries pending.
-        </p>
         `;
 
     }
+
+
+    output.innerHTML += "<hr><h3>Related Articles</h3>";
+
+
+    article.links.forEach(link => {
+
+        output.innerHTML += `
+
+        <button onclick="openArticle('${link}')">
+        Open ${database.articles[link].title}
+        </button>
+
+        `;
+
+    });
+
 
 }
