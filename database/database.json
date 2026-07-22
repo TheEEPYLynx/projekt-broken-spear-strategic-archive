@@ -1,37 +1,43 @@
 {
-  "factions": [
-    {
-      "name": "Knights Council Supreme",
-      "short": "KCS",
-      "description": "A major organization specializing in mechanized warfare and logistics."
+  "articles": {
+    "kcs": {
+      "title": "Knights Council Supreme",
+      "category": "Organization",
+      "overview": "The Knights Council Supreme is a major organization specializing in mechanized warfare and logistics.",
+      "sections": {
+        "History": "The KCS developed alongside the expansion of human civilization and became a major military organization.",
+        "Doctrine": "The KCS focuses on mechanized combat, logistics, and specialized battlefield operations."
+      },
+      "links": [
+        "hmcm",
+        "sow"
+      ]
     },
-    {
-      "name": "United Planetary Defense Coalition",
-      "short": "UPDC",
-      "description": "A major human defense organization."
-    },
-    {
-      "name": "Oddly Weird Outfit",
-      "short": "OWO",
-      "description": "A faction known for advanced warp technology."
-    }
-  ],
 
-  "weapons": [
-    {
-      "name": "HMMR",
-      "description": "Heavy Multi-role Mass Resonance Hammer."
+    "sow": {
+      "title": "Special Operator Weapons",
+      "category": "Weapons Program",
+      "overview": "Special Weapon Operator weapons are advanced weapons requiring specialized certification.",
+      "sections": {
+        "Examples": "Known examples include the HMMR and HSR-93.",
+        "Purpose": "Designed for operators requiring capabilities beyond standard equipment."
+      },
+      "links": [
+        "kcs"
+      ]
     },
-    {
-      "name": "HSR-93",
-      "description": "Heavy Sniper Rifle-93."
-    }
-  ],
 
-  "technology": [
-    {
-      "name": "Heaven's Lance",
-      "description": "A massive orbital railgun system."
+    "hmcm": {
+      "title": "Heavy Military Combat Machine",
+      "category": "Military Systems",
+      "overview": "HMCMs are advanced combat machines used for mechanized warfare.",
+      "sections": {
+        "Generations": "HMCM technology has progressed through multiple generations.",
+        "Pilots": "Later generations introduced advanced AI integration."
+      },
+      "links": [
+        "kcs"
+      ]
     }
-  ]
+  }
 }
