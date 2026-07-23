@@ -1,3 +1,5 @@
+alert("PBS APP LOADED");
+
 let database = null;
 
 
