@@ -116,3 +116,5 @@ function convertLinks(text) {
     return text;
 
 }
+
+document.getElementById("sidebar").innerHTML = createSidebar();
